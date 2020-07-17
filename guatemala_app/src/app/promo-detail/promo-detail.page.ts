@@ -1,23 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataService, Message } from '../services/data.service';
+import { ApiService } from '../services/api.service';
+import { Promo } from '../models/promo';
 
 @Component({
-  selector: 'app-view-message',
-  templateUrl: './view-message.page.html',
-  styleUrls: ['./view-message.page.scss'],
+  selector: 'app-promo-detail',
+  templateUrl: './promo-detail.page.html',
+  styleUrls: ['./promo-detail.page.scss'],
 })
-export class ViewMessagePage implements OnInit {
-  public message: Message;
+export class PromoDetailPage implements OnInit {
+
+  public promo: Promo;
 
   constructor(
-    private data: DataService,
+    private apiService: ApiService,
     private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.message = this.data.getMessageById(parseInt(id, 10));
+    this.apiService.getPromo(id).subscribe((response) => {
+    	this.promo = response;
+    })
   }
 
   getBackButtonText() {
@@ -25,4 +29,5 @@ export class ViewMessagePage implements OnInit {
     const mode = win && win.Ionic && win.Ionic.mode;
     return mode === 'ios' ? 'Inbox' : '';
   }
+
 }

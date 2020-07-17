@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>List All Promos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <app-message *ngFor="let promo of promosData">
+      <ion-item *ngIf="promo" [routerLink]="'/promo/' + promo.id" [detail]="false">
+        <ion-label class="ion-text-wrap">
+          <h2>{{ promo.title }}</h2>          
+          <span class="date">
+            <ion-note>Dirección: {{ promo.address }}, Precio: {{ promo.price }}, Latitud: {{ promo.latitude }}, Longitud: {{ promo.longitude }}</ion-note>
+            <ion-icon name="chevron-forward" size="small" *ngIf="isIos()"></ion-icon>
+          </span>
+          <span class="date">
+            <ion-note>Precio: {{ promo.price }}</ion-note>
+            <ion-icon name="chevron-forward" size="small" *ngIf="isIos()"></ion-icon>
+          </span>
+        </ion-label>
+      </ion-item>
+    </app-message>
+  </ion-list>
+  <ion-button (click)="logOut()">Cerrar Sesion</ion-button>
+</ion-content>
