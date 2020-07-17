@@ -1,6 +1,14 @@
 # Guatemala App
 Ionic / Angular
 
+Que incluye?
+- Log In 
+- Registro
+- Listar Promociones
+- Detalle de Promocion
+
+Nota: Todos estos endpoints fueron creados en laravel
+
 Run:
 
 ```
