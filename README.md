@@ -30,4 +30,8 @@ ionic cordova run ios
 ionic cordova run android
 ```
 
-
+## Screenshots
+![Imagen 1](https://github.com/pablopantaleon/guatemala_app/blob/master/1.png?raw=true)
+![Imagen 2](https://github.com/pablopantaleon/guatemala_app/blob/master/2.png?raw=true)
+![Imagen 3](https://github.com/pablopantaleon/guatemala_app/blob/master/3.png?raw=true)
+![Imagen 4](https://github.com/pablopantaleon/guatemala_app/blob/master/4.png?raw=true)
