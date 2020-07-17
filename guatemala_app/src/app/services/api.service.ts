@@ -72,11 +72,13 @@ export class ApiService {
       .post<UserResponse>(this.base_path + '/login', JSON.stringify(item), this.httpOptions)
       .pipe(catchError(this.handleError))
       .subscribe((response) => {
-        this.token = response.access_token;          
-        this.storage.set('TOKEN', response.access_token).then((response) => {
-          this.authState.next(true);
-          this.router.navigate(['/promo']);          
-        });
+        if (response.message == null) {
+          this.token = response.access_token;          
+          this.storage.set('TOKEN', response.access_token).then((response) => {
+            this.authState.next(true);
+            this.router.navigate(['/promo']);          
+          });
+        }
       });
   }
 

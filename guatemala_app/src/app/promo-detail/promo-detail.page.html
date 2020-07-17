@@ -8,20 +8,16 @@
 
 <ion-content [fullscreen]="true" *ngIf="promo">
   <ion-item>
-    <ion-icon name="person-circle" color="primary"></ion-icon>
+    <ion-icon name="cafe-outline" color="primary"></ion-icon>
     <ion-label class="ion-text-wrap">
-      <h2>
-        {{ promo.title }}
-        <span class="date">
-          <ion-note>{{ message.address }}</ion-note>
-        </span>
-      </h2>
+      <h2>{{ promo.title }}</h2>
     </ion-label>
   </ion-item>
   
   <div class="ion-padding">
-    <h3>Precio: {{ message.price }}</h3>
-    <h3>Latitud: {{ message.latitude }}</h3>
-    <h3>Longitud: {{ message.longitude }}</h3>    
+    <h3>Dirección: {{ promo.address }}</h3>
+    <h3>Precio: {{ promo.price }}</h3>
+    <h3>Latitud: {{ promo.latitude }}</h3>
+    <h3>Longitud: {{ promo.longitude }}</h3>    
   </div>
 </ion-content>
